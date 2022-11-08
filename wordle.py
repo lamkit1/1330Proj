@@ -90,3 +90,5 @@ elif p1 > p2:
   print('Player 1 guess more words right. Player 1 get an A and player 2 fail this course.')
 else:
   print('Player 2 guess more words right. Player 2 get an A and player 1 fail this course.')
+
+return grades_storage
