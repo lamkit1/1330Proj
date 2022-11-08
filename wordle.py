@@ -16,13 +16,13 @@ Player who guess more words correctly get an A in this course.
 Player who guess less words correctly fail in this course.
 If both players can't guess any words.Both of you fail this course. ><
 Let's start the game.\n""")
-a1 = 0
+a1 = 0 
 p1 = 0
 p2 = 0
 for i in range(0,3):
-  w1 = random.choice(word_list)
+  w1 = random.choice(word_list) #randomly choose a word from the wordlist
   correct_word = list(w1)
-  tem = correct_word.copy()
+  tem = correct_word.copy() #save the correct word as it will be changed later
   attempt = 6
   is_correct = False
   guide = ['X', 'X', 'X', 'X', 'X']
@@ -35,7 +35,7 @@ for i in range(0,3):
     guess = list(v2)
     v3 = 0
     v4 = 1
-    if len(v2) != 5 or v2 not in word_list:
+    if len(v2) != 5 or v2 not in word_list:  #ensure that the input must be a 5-letter word
       print('Invalid input.')
       if attempt == 1:
         print(f"you have {attempt} attempt left.")
@@ -44,9 +44,9 @@ for i in range(0,3):
     else:
       for i in range(0,5):
         if guess[i] == correct_word[i]:
-          guide[i] = 'G'
-          correct_word[i] = str(v3)
-          guess[i] = str(v4)
+           guide[i] = 'G'    # 'G' is shown when that letter is in the word and in the correct spot
+          correct_word[i] = str(v3) #change the letter checked for the answer to 0 so it won't be checked again
+          guess[i] = str(v4) #change the letter that checked for the guess to 1 so it won't be checked again
       for j in range(0,5):
         if guess[j] in correct_word:
           guide[j] = 'Y'
@@ -55,7 +55,7 @@ for i in range(0,3):
             guess[j] = str(v4)
             correct_word[k] = str(v3)
             break
-      correct_word = tem.copy()
+      correct_word = tem.copy() #return the correct answer to normal word(without the replacement of 0 in for loop)
       attempt -= 1
       a1 += 1
       print(guide)
@@ -72,17 +72,17 @@ for i in range(0,3):
     if a1 % 2 == 0:
       a1 = 0
       print('Player 2 wins!!!\n')
-      p2 += 1
+      p2 += 1 #p2 get 1 point when he wins
     else:
       a1 = 1
       print('Player 1 wins!!!\n')
-      p1 += 1
+      p1 += 1 #p1 get 1 point when he wins
   else:
     print('NOOOOOO!!! Both of you cannot guess the word correctly.\n')
     if a1 % 2 == 0:
-      a1 = 0
+      a1 = 0 #If p2 wins in first game then p1 answers first in second game
     else:
-      a1 = 1
+      a1 = 1 #If p1 wins in first game then p2 answers first in second game
 
 if p1 == 0 and p2 == 0:
   print('Both of you guess 0 word right. You guys fail this course.')
