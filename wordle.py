@@ -59,7 +59,7 @@ for i in range(0,3):
       attempt -= 1
       a1 += 1
       print(guide)
-      if guide != ['G', 'G', 'G', 'G', 'G']:
+      if guide != ['G', 'G', 'G', 'G', 'G']:  #show how many attempts that player is left
         if attempt == 1:
           print(f"you have {attempt} attempt left.")
         elif attempt > 1:
