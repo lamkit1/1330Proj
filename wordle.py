@@ -44,7 +44,7 @@ for i in range(0,3):
     else:
       for i in range(0,5):
         if guess[i] == correct_word[i]:
-           guide[i] = 'G'    # 'G' replaces 'X' when that letter is in the word and in the correct spot
+          guide[i] = 'G'    # 'G' replaces 'X' when that letter is in the word and in the correct spot
           correct_word[i] = str(v3) #change the letter checked for the answer to 0 so it won't be checked again
           guess[i] = str(v4) #change the letter that checked for the guess to 1 so it won't be checked again
       for j in range(0,5):
